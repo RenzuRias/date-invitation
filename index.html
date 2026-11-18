@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A invitation for someone special."
+    />
+    <meta name="theme-color" content="#fff8f2" />
+    <title>Hello!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <header class="brand" aria-label="A tiny invitation">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>A tiny invitation</span>
+      </header>
+
+      <section class="card" aria-live="polite">
+        <div class="progress" aria-label="Progress">
+          <span class="progress-dot is-active" data-progress="1"></span>
+          <span class="progress-dot" data-progress="2"></span>
+          <span class="progress-dot" data-progress="3"></span>
+        </div>
+
+        <div class="screen is-active" id="invite-screen">
+          <div class="eyebrow">I have a question</div>
+          <div class="doodle" aria-hidden="true">
+            <svg viewBox="0 0 160 112" role="img">
+              <path class="doodle-line" d="M39 57c-1-20 17-37 38-35 21 2 35 19 34 41-2 27-24 43-37 48-13-7-33-26-35-54Z" />
+              <path class="doodle-fill" d="M79 38c-8-13-27-7-25 9 2 14 24 27 25 28 1-1 23-14 25-28 2-16-17-22-25-9Z" />
+              <path class="spark" d="m126 18 2 7 7 2-7 2-2 7-2-7-7-2 7-2 2-7Z" />
+              <path class="spark small" d="m31 25 1.5 5 5 1.5-5 1.5-1.5 5-1.5-5-5-1.5 5-1.5 1.5-5Z" />
+            </svg>
+          </div>
+          <h1>Would you like to go out with me?</h1>
+          <p class="lede">Just us, a little time, and hopefully a really good day.</p>
+
+          <div class="button-row">
+            <button class="button button-primary" id="yes-button" type="button">
+              Yes, I’d love to <span aria-hidden="true">→</span>
+            </button>
+            <button class="button button-quiet" id="no-button" type="button">No</button>
+          </div>
+        </div>
+
+        <div class="screen" id="choice-screen">
+          <button class="back-button" id="back-button" type="button" aria-label="Go back">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <div class="eyebrow">This is exciting</div>
+          <h2>What sounds good?</h2>
+          <p class="supporting">Pick the kind of date you’d enjoy most.</p>
+
+          <form id="date-form">
+            <fieldset class="date-grid">
+              <legend class="sr-only">Choose a date idea</legend>
+
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Coffee date" />
+                <span class="option-icon" aria-hidden="true">☕</span>
+                <span>Coffee date</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Library / study date" />
+                <span class="option-icon" aria-hidden="true">📚</span>
+                <span>Library / Study</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Restaurant" />
+                <span class="option-icon" aria-hidden="true">🍽️</span>
+                <span>Restaurant</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Fast food" />
+                <span class="option-icon" aria-hidden="true">🍟</span>
+                <span>Fast Food</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Mall" />
+                <span class="option-icon" aria-hidden="true">🛍️</span>
+                <span>Mall</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Walk in the park" />
+                <span class="option-icon" aria-hidden="true">🌳</span>
+                <span>Walk in the park</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Visit home" />
+                <span class="option-icon" aria-hidden="true">🏡</span>
+                <span>Visit home</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Museum" />
+                <span class="option-icon" aria-hidden="true">🏛️</span>
+                <span>Museum</span>
+              </label>
+              <label class="date-option">
+                <input type="radio" name="dateType" value="Other" />
+                <span class="option-icon" aria-hidden="true">✨</span>
+                <span>Other</span>
+              </label>
+            </fieldset>
+
+            <div class="other-wrap" id="other-wrap" hidden>
+              <label for="other-idea">Your idea</label>
+              <input id="other-idea" name="otherIdea" type="text" maxlength="80" placeholder="Tell me what you have in mind…" />
+            </div>
+
+            <div class="details-grid">
+              <div class="field">
+                <label for="guest-name">Your name <span>optional</span></label>
+                <input id="guest-name" name="guestName" type="text" maxlength="50" placeholder="So I know it’s you" />
+              </div>
+              <div class="field">
+                <label for="preferred-date">Preferred day <span>optional</span></label>
+                <input id="preferred-date" name="preferredDate" type="date" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">A little note <span>optional</span></label>
+              <textarea id="message" name="message" maxlength="240" rows="3" placeholder="Anything you want me to know?"></textarea>
+              <span class="character-count" id="character-count">0 / 240</span>
+            </div>
+
+            <p class="form-error" id="form-error" role="alert"></p>
+            <button class="button button-primary button-full" id="submit-button" type="submit">
+              Show our plan <span aria-hidden="true">♥</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="screen" id="success-screen">
+          <div class="success-mark" aria-hidden="true">
+            <span>♥</span>
+          </div>
+          <div class="eyebrow">It’s a date</div>
+          <h2>Best answer ever.</h2>
+          <p class="supporting">Your answer has been saved. Here’s our little plan:</p>
+
+          <div class="receipt" id="receipt">
+            <div class="receipt-top">
+              <span>DATE RECEIPT</span>
+              <span id="receipt-number">#0000</span>
+            </div>
+            <div class="receipt-row">
+              <span>Plan</span>
+              <strong id="summary-type"></strong>
+            </div>
+            <div class="receipt-row" id="summary-name-row" hidden>
+              <span>From</span>
+              <strong id="summary-name"></strong>
+            </div>
+            <div class="receipt-row" id="summary-date-row" hidden>
+              <span>Preferred day</span>
+              <strong id="summary-date"></strong>
+            </div>
+            <div class="receipt-note" id="summary-note-wrap" hidden>
+              <span>Note</span>
+              <p id="summary-note"></p>
+            </div>
+            <div class="receipt-total">
+              <span>Total</span>
+              <strong>One lovely date</strong>
+            </div>
+          </div>
+
+          <button class="button button-quiet" id="start-over-button" type="button">Start over</button>
+        </div>
+      </section>
+
+      <footer>Made with a little courage and a lot of hope.</footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
