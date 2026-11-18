@@ -70,7 +70,7 @@ function displaySummary(details) {
     })
   );
   document.querySelector("#summary-total").textContent =
-    details.plans.length === 1 ? "Here is our plan" : `${details.plans.length} awesome plans!`;
+    details.plans.length === 1 ? "One awesome plan!" : `${details.plans.length} awesome plans!`;
   document.querySelector("#receipt-number").textContent = details.receiptNumber;
 
   const nameRow = document.querySelector("#summary-name-row");
