@@ -27,20 +27,21 @@ document.querySelector("#no-button").addEventListener("click", () => {});
 
 form.addEventListener("change", (event) => {
   if (event.target.name !== "dateType") return;
-  const isOther = event.target.value === "Other";
-  otherWrap.hidden = !isOther;
-  otherInput.required = isOther;
-  if (isOther) otherInput.focus();
+  const otherOption = form.querySelector('input[name="dateType"][value="Other"]');
+  const isOtherSelected = otherOption.checked;
+  otherWrap.hidden = !isOtherSelected;
+  otherInput.required = isOtherSelected;
+  if (event.target === otherOption && isOtherSelected) otherInput.focus();
 });
 
 messageInput.addEventListener("input", () => {
   characterCount.textContent = `${messageInput.value.length} / 240`;
 });
 
-function selectedPlan() {
-  const selected = form.querySelector('input[name="dateType"]:checked');
-  if (!selected) return "";
-  return selected.value === "Other" ? otherInput.value.trim() : selected.value;
+function selectedPlans() {
+  return [...form.querySelectorAll('input[name="dateType"]:checked')].map((option) =>
+    option.value === "Other" ? otherInput.value.trim() : option.value
+  );
 }
 
 function formatDate(value) {
@@ -60,7 +61,16 @@ function createReceiptNumber() {
 }
 
 function displaySummary(details) {
-  document.querySelector("#summary-type").textContent = details.plan;
+  const summaryList = document.querySelector("#summary-type");
+  summaryList.replaceChildren(
+    ...details.plans.map((plan) => {
+      const item = document.createElement("li");
+      item.textContent = plan;
+      return item;
+    })
+  );
+  document.querySelector("#summary-total").textContent =
+    details.plans.length === 1 ? "Here is our plan" : `${details.plans.length} awesome plans!`;
   document.querySelector("#receipt-number").textContent = details.receiptNumber;
 
   const nameRow = document.querySelector("#summary-name-row");
@@ -82,22 +92,22 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   formError.textContent = "";
 
-  const selected = form.querySelector('input[name="dateType"]:checked');
-  if (!selected) {
-    formError.textContent = "Choose a date idea first.";
+  const selected = form.querySelectorAll('input[name="dateType"]:checked');
+  if (!selected.length) {
+    formError.textContent = "Choose at least one date idea first.";
     form.querySelector('input[name="dateType"]').focus();
     return;
   }
 
-  const plan = selectedPlan();
-  if (!plan) {
+  const plans = selectedPlans();
+  if (plans.some((plan) => !plan)) {
     formError.textContent = "Tell me your date idea first.";
     otherInput.focus();
     return;
   }
 
   const details = {
-    plan,
+    plans,
     name: document.querySelector("#guest-name").value.trim(),
     preferredDate: document.querySelector("#preferred-date").value,
     note: messageInput.value.trim(),

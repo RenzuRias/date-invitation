@@ -1,6 +1,6 @@
 # Date Invitation Website
 
-A responsive static website built with HTML, CSS, and vanilla JavaScript. It can be hosted for free on GitHub Pages, Netlify, Cloudflare Pages, or any static host. Answers are displayed only on the final overview screen and are not sent or stored anywhere.
+A responsive static website built with HTML, CSS, and vanilla JavaScript. Visitors can choose one or more date ideas, which are displayed on the final overview screen. Answers are not sent or stored anywhere. It can be hosted for free on GitHub Pages, Netlify, Cloudflare Pages, or any static host.
 
 ## Preview locally
 

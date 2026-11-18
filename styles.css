@@ -305,6 +305,17 @@ input:hover, textarea:hover { border-color: rgba(233,110,87,0.35); }
 .receipt-top { padding-bottom: 1rem; border-bottom: 1px dashed #d8cbc5; color: #91847f; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.14em; }
 .receipt-row { padding: 1rem 0; border-bottom: 1px solid #eee7e3; color: var(--muted); font-size: 0.88rem; }
 .receipt-row strong { color: var(--ink); text-align: right; }
+.summary-plans {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--ink);
+  font-weight: 700;
+  list-style: none;
+  text-align: right;
+}
+.summary-plans li::before { content: "✓ "; color: var(--coral); }
 .receipt-note { padding: 1rem 0; border-bottom: 1px solid #eee7e3; }
 .receipt-note span { color: var(--muted); font-size: 0.82rem; }
 .receipt-note p { margin: 0.35rem 0 0; line-height: 1.5; }

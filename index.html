@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A invitation for someone special."
+      content="An invitation."
     />
     <meta name="theme-color" content="#fff8f2" />
-    <title>Hello!</title>
+    <title>Hello, Jane!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,9 +22,9 @@
     <div class="ambient ambient-two" aria-hidden="true"></div>
 
     <main class="page-shell">
-      <header class="brand" aria-label="A tiny invitation">
+      <header class="brand" aria-label="An invitation">
         <span class="brand-mark" aria-hidden="true">✦</span>
-        <span>A tiny invitation</span>
+        <span>An invitation</span>
       </header>
 
       <section class="card" aria-live="polite">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="screen is-active" id="invite-screen">
-          <div class="eyebrow">I have a question</div>
+          
           <div class="doodle" aria-hidden="true">
             <svg viewBox="0 0 160 112" role="img">
               <path class="doodle-line" d="M39 57c-1-20 17-37 38-35 21 2 35 19 34 41-2 27-24 43-37 48-13-7-33-26-35-54Z" />
@@ -59,56 +59,56 @@
           <button class="back-button" id="back-button" type="button" aria-label="Go back">
             <span aria-hidden="true">←</span> Back
           </button>
-          <div class="eyebrow">This is exciting</div>
+          <div class="eyebrow">wow! hehe~</div>
           <h2>What sounds good?</h2>
-          <p class="supporting">Pick the kind of date you’d enjoy most.</p>
+          <p class="supporting">Pick one or more activities you’d enjoy.</p>
 
           <form id="date-form">
             <fieldset class="date-grid">
-              <legend class="sr-only">Choose a date idea</legend>
+              <legend class="sr-only">Choose one or more date ideas</legend>
 
               <label class="date-option">
-                <input type="radio" name="dateType" value="Coffee date" />
+                <input type="checkbox" name="dateType" value="Coffee date" />
                 <span class="option-icon" aria-hidden="true">☕</span>
                 <span>Coffee date</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Library / study date" />
+                <input type="checkbox" name="dateType" value="Library / study date" />
                 <span class="option-icon" aria-hidden="true">📚</span>
                 <span>Library / Study</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Restaurant" />
+                <input type="checkbox" name="dateType" value="Restaurant" />
                 <span class="option-icon" aria-hidden="true">🍽️</span>
                 <span>Restaurant</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Fast food" />
+                <input type="checkbox" name="dateType" value="Fast food" />
                 <span class="option-icon" aria-hidden="true">🍟</span>
                 <span>Fast Food</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Mall" />
+                <input type="checkbox" name="dateType" value="Mall" />
                 <span class="option-icon" aria-hidden="true">🛍️</span>
                 <span>Mall</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Walk in the park" />
+                <input type="checkbox" name="dateType" value="Walk in the park" />
                 <span class="option-icon" aria-hidden="true">🌳</span>
                 <span>Walk in the park</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Visit home" />
+                <input type="checkbox" name="dateType" value="Visit home" />
                 <span class="option-icon" aria-hidden="true">🏡</span>
                 <span>Visit home</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Museum" />
+                <input type="checkbox" name="dateType" value="Museum" />
                 <span class="option-icon" aria-hidden="true">🏛️</span>
                 <span>Museum</span>
               </label>
               <label class="date-option">
-                <input type="radio" name="dateType" value="Other" />
+                <input type="checkbox" name="dateType" value="Other" />
                 <span class="option-icon" aria-hidden="true">✨</span>
                 <span>Other</span>
               </label>
@@ -147,8 +147,8 @@
           <div class="success-mark" aria-hidden="true">
             <span>♥</span>
           </div>
-          <div class="eyebrow">It’s a date</div>
-          <h2>Best answer ever.</h2>
+          
+          <h2>See you soon!</h2>
           <p class="supporting">Your answer has been saved. Here’s our little plan:</p>
 
           <div class="receipt" id="receipt">
@@ -157,8 +157,8 @@
               <span id="receipt-number">#0000</span>
             </div>
             <div class="receipt-row">
-              <span>Plan</span>
-              <strong id="summary-type"></strong>
+              <span>Plans</span>
+              <ul class="summary-plans" id="summary-type"></ul>
             </div>
             <div class="receipt-row" id="summary-name-row" hidden>
               <span>From</span>
@@ -174,7 +174,7 @@
             </div>
             <div class="receipt-total">
               <span>Total</span>
-              <strong>One lovely date</strong>
+              <strong id="summary-total">One lovely date</strong>
             </div>
           </div>
 
@@ -182,7 +182,11 @@
         </div>
       </section>
 
-      <footer>Made with a little courage and a lot of hope.</footer>
+      <footer class="footer">
+        <p>
+          Made with <span aria-hidden="true">♥</span> by
+          <a href="https://www.facebook.com/beren.latorza/" target="_blank" rel="noopener noreferrer">Beren</a>
+        </p>
     </main>
 
     <script src="script.js"></script>
